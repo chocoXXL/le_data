@@ -1,42 +1,57 @@
 
-  if (navigator.geolocation) {
-    // Locate position
-    navigator.geolocation.getCurrentPosition(displayPosition, errorFunction);
-} else {
-    alert('It seems like Geolocation, which is required for this page, is not enabled in your browser. Please use a browser which supports it.');
-}
+      var markers = [];
+      function initMap() {
+      
+      //myLatlng = {lat: -25.363, lng: 131.044};
+      navigator.geolocation.getCurrentPosition(function (p) {
+        var LatLng = new google.maps.LatLng(p.coords.latitude, p.coords.longitude);
+        var mapOptions = {
+            center: LatLng,
+            zoom: 16,
+            //mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+        var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+        var marker = new google.maps.Marker({
+            position: LatLng,
+            map: map,
+            //title: "<div style = 'height:60px;width:200px'><b>Your location:</b><br />Latitude: " + p.coords.latitude + "<br />Longitude: " + p.coords.longitude
+        });
+        document.getElementById("le_geo").value = LatLng.lat() +','+ LatLng.lng();
+        console.log("Latitude: " + LatLng.lat() + "\r\nLongitude: " + LatLng.lng());
+        markers.push(marker);
 
-// Success callback function
-function displayPosition(pos) {
-    var mylat = pos.coords.latitude;
-    var mylong = pos.coords.longitude;
-    var thediv = document.getElementById('locationinfo');
-    /*
-    thediv.innerHTML = '<p>Your longitude is :' +
-        mylong + ' and your latitide is ' + mylat + '</p>';
-    */
-    thediv.innerHTML = '<span>GEO Local: </span><input type="text" name="lo_nam" value="' + mylong + ',' + mylat + '"><br>';
+        //google.maps.event.addListener(marker, "click", function (e) {
+            //var infoWindow = new google.maps.InfoWindow();
+            //infoWindow.setContent(marker.title);
+            //infoWindow.open(map, marker);
+        //});
+          map.addListener('click', function (e) {
+              
+              console.log("Latitude: " + e.latLng.lat() + "\r\nLongitude: " + e.latLng.lng());
+                var location = e.latLng;
+                var marker = new google.maps.Marker({
+                    position: location,
+                    map: map,
+                    animation: google.maps.Animation.DROP,
+                  });
+              DeleteMarkers();
 
-//Load Google Map
-var latlng = new google.maps.LatLng(mylat, mylong);
-    var myOptions = {
-      zoom: 15,
-      center: latlng,
-      mapTypeId: google.maps.MapTypeId.ROADMAP
-    };
-   
-var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+              markers.push(marker);
 
-//Add marker
-var marker = new google.maps.Marker({
-         position: latlng, 
-         map: map, 
-         title:"You are here"
-     });
-}
+              map.panTo(location);
+              document.getElementById("le_geo").value = e.latLng.lat() +','+ e.latLng.lng();
 
-// Error callback function
-function errorFunction(pos) {
-    alert('Error!');
-}
+          });
 
+        });
+
+
+      };
+
+          function DeleteMarkers() {
+              //Loop through all the markers and remove
+              for (var i = 0; i < markers.length; i++) {
+                  markers[i].setMap(null);
+              }
+              markers = [];
+          };

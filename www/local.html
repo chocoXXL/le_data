@@ -9,7 +9,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
         <link rel="stylesheet" href="assets/css/swagg.css" type="text/css" />
-        <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+        <!--<link rel="stylesheet" href="assets/css/font-awesome.min.css">-->
 
         <!-- <link rel="stylesheet" href="assets/css/chocoawesomefonts.css"> -->
         <meta name="theme-color" content="#ffffff">
@@ -26,88 +26,102 @@
                         <div class="le_title">
                             <h1>#YCY</h1>
                         </div>
-                        <form class="le_form">
+                        <form method="post" id="reg-form" class="le_form">
                             <div class="le_dato">
                                 <span>Nombre Local: </span>
-                                <input type="text" name="lo_nam" value="">
+                                <input type="text" name="lo_nam" value="" id="le_nam">
                             </div>
                             <div class="le_dato" id="locationinfo">
                                 <span>GEO Local: </span>
-                                <input type="text" name="lo_nam" value="">
+                                <input type="text" name="lo_nam" value="" id="le_geo" readonly required="">
                             </div>
                             <div class="le_dato">
                                 <span>Dirección Local: </span>
-                                <input type="text" name="lo_nam" value="">
+                                <input type="text" name="lo_nam" value="" id="le_dir">
                             </div>
                             <div class="le_dato">
                                 <span>Distrito Local: </span>
-                                <input type="text" name="lo_nam" value="">
+                                <input type="text" name="lo_nam" value="" id="le_dis">
                             </div>
                             <div class="le_dato">
                                 <span>Teléfono Local: </span>
-                                <input type="text" name="lo_nam" value="">
+                                <input type="text" name="lo_nam" value="" id="le_tel">
                             </div>
                             <div class="le_dato">
                                 <span>Web Local: </span>
-                                <input type="text" name="lo_nam" value="">
+                                <input type="text" name="lo_nam" value="" id="le_web">
                             </div>
                             <div class="le_dato">
                                 <span>Mail Local: </span>
-                                <input type="text" name="lo_nam" value="">
+                                <input type="text" name="lo_nam" value="" id="le_mail">
                             </div>
                             <div class="le_dato">
                                 <span>Categoría Local: </span>
-                                <input type="text" name="lo_nam" value="">
+                                <input type="text" name="lo_nam" value="" id="le_cat">
                             </div>
                             <div class="le_dato">
                                 <span>Tags Local: </span>
-                                <input type="text" name="lo_nam" value="">
+                                <input type="text" name="lo_nam" value="" id="le_tag">
                             </div>
                             <div class="le_dato">
                                 <span>Precio Local: </span>
-                                <input type="text" name="lo_nam" value="">
+                                <input type="text" name="lo_nam" value="" id="le_pre">
                             </div>
                             <div class="le_dato">
                                 <span>Estrellas Local: </span>
-                                <input type="text" name="lo_nam" value="">
+                                <input type="text" name="lo_nam" value="" id="le_est">
                             </div>
 
                             
-                            <div>
-                                <div id="map_canvas"></div>
+                            <div>  
+                                <div id="map"></div>
+
+                                <!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCvfcV_6K5BP6PivJWDqJuVOdPBQBhO2Fg&callback=myMap"></script>-->
                             </div>
-                        </form>
 
                         <div class="le_nav">
                             <nav class="nav_info">
+                                <button class="le_btn">
+                                    <input type="submit" value="Enviar">
+                                </button>
+                                <div id="pop_box">Local Enviado</div>
                                 <button class="le_btn">
                                     <a href="index.html">Regresar</a>
                                 </button>
                             </nav>
                         </div>
+                        
+                        </form>
                     </div>
                 </div>
                 
-                
-                <div id="box_9" class="box_info fofix">
-                    <footer class="area">
-                        <div class="main_footer">
-                            <p>CHOCO</p>
-                        </div>
-                    </footer>
-                </div>
+            </div>
+            <div id="box_9" class="box_info fofix">
+                <footer class="area">
+                    <div class="main_footer">
+                        <p>CHOCO</p>
+                    </div>
+                </footer>
             </div>
         </div>
        
 
     <!--<script src="assets/js/jquery-3.1.0.js" type="text/javascript"></script>-->
-    <script src="assets/js/jquery-1.12.1.js" type="text/javascript"></script>
-    <script src="assets/js/zepto.min.js"></script>
-    <script src="assets/js/touch.js"></script>
     
+    <script src="assets/js/jquery-2.1.1.min.js"></script>
+    <!--<script src="assets/js/jquery.mobile-1.4.2.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+    -->
 
-    <script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=true"></script>
-    <script type="text/javascript" src="assets/js/gmaps.js"></script>
+    <!-- PERO QUE -->
+    <!--<script src="assets/js/zepto.min.js"></script>
+    <script src="assets/js/touch.js"></script>-->
+
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCvfcV_6K5BP6PivJWDqJuVOdPBQBhO2Fg&callback=initMap">
+    </script>
+    <!--<script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=true"></script>
+    <script type="text/javascript" src="assets/js/gmaps.js"></script>-->
     
     <script src="assets/js/actions.js" type="text/javascript"></script>
     <script src="assets/js/actions_map.js" type="text/javascript"></script>

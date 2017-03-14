@@ -1,6 +1,7 @@
 
 
 /* FORMULARIO */    
+
 $(document).on('submit', '#reg-form', function()
     {
 
@@ -29,6 +30,7 @@ $(document).on('submit', '#reg-form', function()
         });
         return false;
     });
+
 //FIN
 /*
 function hide1() {
