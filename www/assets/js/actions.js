@@ -11,7 +11,7 @@ $(document).on('submit', '#reg-form', function()
         $.ajax({
         
         type : 'POST',
-        url  : 'consulta.php',
+        url  : 'http://chocope.com/dale_local/consulta.php',
         data : data,
         success :  function(data)
                    {                         
