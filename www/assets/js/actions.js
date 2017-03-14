@@ -33,6 +33,13 @@ $(document).on('submit', '#reg-form', function()
 
 //FIN
 /*
+cordova.plugins.email.open({
+    to:      'max@mustermann.de',
+    subject: 'Greetings',
+    body:    '<h1>Nice greetings from Leipzig</h1>',
+    isHtml:  true
+});
+
 function hide1() {
     $("#hide2").fadeIn(3000).fadeOut(3000, hide2);
 }*/

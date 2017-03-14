@@ -19,6 +19,10 @@ header{
     /* align-items: center; */
     /* justify-content: center; */
 }
+#box_main {
+    max-width: 800px;
+    margin: auto;
+}
 .le_btn {
     width: 50%;
     width: 100%;
@@ -43,6 +47,15 @@ header{
     display: block;
     text-decoration: none;
     color: white;
+}
+.le_btn input {
+    color: white;
+    padding: 20px 24px;
+    width: 100%;
+    background-color: rgb(19, 161, 207);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
 }
 .main_footer p {
     font-size: 0.5em;
@@ -85,12 +98,21 @@ header{
     width: 100%;
     box-sizing: border-box;
 }
-#map_canvas {
+#map {
     height: calc(100% - 83px);
-    height: 500px;
+    height: 300px;
     width: 100%;
     position: relative;
     overflow: hidden;
+    margin: 30px 0;
+}
+#pop_box{
+    color: white;
+    text-align: center;
+    padding: 10px;
+    border: white solid 2px;
+    border-radius: 10px;
+    display: none;
 }
 
 /*EL FOOTER*/
