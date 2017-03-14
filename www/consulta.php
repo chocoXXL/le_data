@@ -70,8 +70,7 @@
     $encabezado = "Un nuevo Local";
     
 //Setup Email
-    $headers = 'From: La Data Local App ' . "\r\n" .
-               'Reply-To: ' . $email_ec  . "\r\n" .
+    $headers = 'From: La Data Local App <onecoldplayer@gmail.com>' . "\r\n" .
                'Cc:' .  $email_ec_2  . "\r\n" .
                'Content-Type: text/html; charset=UTF-8' . "\r\n" .
                'X-Mailer: PHP/' . phpversion();
