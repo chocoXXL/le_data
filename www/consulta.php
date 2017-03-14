@@ -64,14 +64,15 @@
     $mensaje .= "</body></html>";
 
     $email_ec  = 'onecoldplayer@gmail.com';
-    //$email_ec  = 'onecoldplayer@hotmail.com . ', '; // note the comma
+    $email_ec_2  = 'onecoldplayer@hotmail.com'; 
+    //$email_ec_3  = 'onecoldplayer@hotmail.com . ', ''; // note the comma
     //$email_ec .= $email;
     $encabezado = "Un nuevo Local";
     
 //Setup Email
-    $headers = 'From: ' . $fname  . "\r\n" .
-               'Reply-To: ' . $email  . "\r\n" .
-               'Cc:' .  $email  . "\r\n" .
+    $headers = 'From: La Data Local App ' . "\r\n" .
+               'Reply-To: ' . $email_ec  . "\r\n" .
+               'Cc:' .  $email_ec_2  . "\r\n" .
                'Content-Type: text/html; charset=UTF-8' . "\r\n" .
                'X-Mailer: PHP/' . phpversion();
 
